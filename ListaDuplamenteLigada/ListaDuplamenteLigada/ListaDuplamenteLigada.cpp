@@ -179,6 +179,8 @@ void excluirPrimeiroElemento()
 		NO* aux = primeiro;
 		primeiro = aux->prox;
 		free(aux);
+		primeiro->ant = NULL;
+		ultimo->prox = NULL;
 		cout << "Elemento excluido. \n";
 	}
 
@@ -194,6 +196,7 @@ void excluirUltimoElemento()
 		NO* aux = ultimo;
 		ultimo = aux->ant;
 		ultimo->prox = NULL;
+		primeiro->ant = NULL;
 		free(aux);
 		cout << "Elemento excluido. \n";
 	}
